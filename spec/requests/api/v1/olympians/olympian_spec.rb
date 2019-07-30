@@ -57,4 +57,10 @@ describe 'Olympians endpoint' do
     data = JSON.parse(response.body)
     expect(data["olympians"][0]["age"]).to eq(13)
   end
+
+  it 'can retrieve oldest olympian' do
+    get '/api/v1/olympians?age=oldest'
+    data = JSON.parse(response.body)
+    expect(data["olympians"][0]["age"]).to eq(20)
+  end
 end
