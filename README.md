@@ -72,3 +72,46 @@
     }
   }
   ```
+
+#### GET api/v1/events
+
+  This endpoint returns a list of all events sorted by the sport that they are associated with.
+
+  This query turned out to be an n^2 which I am not thrilled about, however, I do think that in this situation it's ok, as even if this application is scaled for future olympic games, it will take a very long for the event and sport lists to grow to a point that this query is untenable.
+
+  Sample response:
+  ```
+  {
+  "events": [
+    {
+      "sport": "Archery",
+      "events": [
+        "Archery Women's Individual",
+        "Archery Women's Team",
+        "Archery Men's Individual",
+        "Archery Men's Team"
+      ]
+    },
+    {
+      "sport": "Gymnastics",
+      "events": [
+        "Gymnastics Men's Individual All-Around",
+        "Gymnastics Men's Floor Exercise",
+        "Gymnastics Men's Parallel Bars",
+        "Gymnastics Men's Horizontal Bar",
+        "Gymnastics Men's Rings",
+        "Gymnastics Men's Pommelled Horse",
+        "Gymnastics Men's Team All-Around",
+        "Gymnastics Men's Horse Vault",
+        "Gymnastics Women's Team All-Around",
+        "Gymnastics Women's Uneven Bars",
+        "Gymnastics Women's Balance Beam",
+        "Gymnastics Women's Individual All-Around",
+        "Gymnastics Women's Floor Exercise",
+        "Gymnastics Women's Horse Vault"
+      ]
+    },
+    {...}
+  ]
+}
+  ```
