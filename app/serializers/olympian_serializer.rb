@@ -1,7 +1,8 @@
 class OlympianSerializer
 
-  def self.all_olympians
+  def self.parse_olympians(params = nil)
     olympians = Olympian.includes(:events, :olympian_events)
+
     parsed_olympians = olympians.map do |olympian|
       {name: olympian.name,
        team: olympian.team,
