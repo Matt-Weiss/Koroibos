@@ -28,6 +28,7 @@ describe 'Olympians endpoint' do
                             event_id: event_2.id,
                                medal: "Gold")
   end
+
   it 'can hit endpoint successfully' do
     get '/api/v1/olympians'
     expect(response.status).to eq(200)
@@ -37,5 +38,11 @@ describe 'Olympians endpoint' do
     get '/api/v1/olympians'
     data = JSON.parse(response.body)
     expect(data["olympians"][0]["team"]).to eq("Egypt")
+  end
+
+  it 'can retrieve youngest olympian' do
+    get '/api/v1/olympians?age=youngest'
+    data = JSON.parse(response.body)
+    expect(data["olympians"][0]["age"]).to eq(18)
   end
 end
