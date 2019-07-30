@@ -1,7 +1,16 @@
 class OlympianSerializer
 
   def self.parse_olympians(params = nil)
-    olympians = Olympian.includes(:events, :olympian_events)
+    if params["age"]
+      if params["age"] == 'youngest'
+        order = :asc
+      elsif params["age"] == 'oldest'
+        order = :desc
+      end
+      olympians = Olympian.includes(:events, :olympian_events).order(age: order).limit(1)
+    else
+      olympians = Olympian.includes(:events, :olympian_events)
+    end
 
     parsed_olympians = olympians.map do |olympian|
       {name: olympian.name,
