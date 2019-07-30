@@ -27,6 +27,18 @@ describe 'Olympians endpoint' do
     OlympianEvent.create(olympian_id: olympian_2.id,
                             event_id: event_2.id,
                                medal: "Gold")
+    olympian_3 = Olympian.create(name: "Ana Iulia Dascl",
+                                  sex: "F",
+                                  age: 13,
+                               height: 183,
+                               weight: 60,
+                                 team: "Romania")
+    event_3 = Event.create(games: "2016 Summer",
+                           sport: "Swimming",
+                           event: "Swimming Women's 100 metres Freestyle")
+    OlympianEvent.create(olympian_id: olympian_3.id,
+                            event_id: event_3.id,
+                               medal: "NA")
   end
 
   it 'can hit endpoint successfully' do
@@ -43,6 +55,6 @@ describe 'Olympians endpoint' do
   it 'can retrieve youngest olympian' do
     get '/api/v1/olympians?age=youngest'
     data = JSON.parse(response.body)
-    expect(data["olympians"][0]["age"]).to eq(18)
+    expect(data["olympians"][0]["age"]).to eq(13)
   end
 end
