@@ -17,4 +17,10 @@ describe 'Olympians endpoint' do
     get '/api/v1/events'
     expect(response.status).to eq(200)
   end
+
+  it 'returns all events as an array of sports' do
+    get '/api/v1/events'
+    data = JSON.parse(response.body)
+    expect(data["events"][0]["sport"]).to eq("Swimming")
+  end
 end
