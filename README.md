@@ -115,3 +115,40 @@
   ]
 }
   ```
+
+#### GET api/v1/events/:id/medalists
+
+  This endpoint returns a list of olympians that earned a medal in the specified event. The seed data set is incomplete, so some events currently show no medalists. Also of note is that there can in fact be multiples of each type of medal for an event, if that event is team based.
+
+  Sample response (event 9):
+  ```
+  {
+  "event": "Rowing Men's Coxless Pairs",
+  "medalists": [
+    {
+      "name": "Giovanni Abagnale",
+      "team": "Italy",
+      "age": 21,
+      "medal": "Bronze"
+    },
+    {
+      "name": "Hamish Byron Bond",
+      "team": "New Zealand",
+      "age": 30,
+      "medal": "Gold"
+    },
+    {
+      "name": "Lawrence Brittain",
+      "team": "South Africa",
+      "age": 25,
+      "medal": "Silver"
+    },
+    {
+      "name": "Marco Di Costanzo",
+      "team": "Italy",
+      "age": 24,
+      "medal": "Bronze"
+    }
+  ]
+}
+  ```

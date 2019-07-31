@@ -8,4 +8,17 @@ class EventsSerializer
     end
     {events: sorted_events}
   end
+
+  def self.medalists(event_id)
+    event = Event.find(event_id)
+    medalists = event.olympians.select(:name, :team, :age, 'olympian_events.medal as medal').where('olympian_events.medal != ?', 'NA')
+    parsed_medalists = medalists.map do |medalist|
+      {name: medalist.name,
+       team: medalist.team,
+        age: medalist.age,
+      medal: medalist.medal}
+    end
+    {event: event.event,
+    medalists: parsed_medalists}
+  end
 end
