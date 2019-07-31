@@ -18,7 +18,7 @@ class EventsSerializer
         age: medalist.age,
       medal: medalist.medal}
     end
-    {event: event.sport,
+    {event: event.event,
     medalists: parsed_medalists}
   end
 end
