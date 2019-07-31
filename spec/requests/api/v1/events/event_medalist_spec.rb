@@ -47,7 +47,7 @@ describe 'Olympians endpoint' do
   it 'returns all medalists as an array with specific data' do
     get "/api/v1/events/#{@event_1.id}/medalists"
     data = JSON.parse(response.body)
-    expect(data["event"]).to eq("Diving")
+    expect(data["event"]).to eq("Diving Women's Platform")
     expect(data["medalists"][0]["name"]).to eq("Maha Abdalsalam Gouda")
   end
 
