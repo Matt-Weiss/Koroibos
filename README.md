@@ -5,6 +5,8 @@
   Because this project is a representation of everything we've learned so far, I've opted to complete it in Rails. I feel that documentation and process are important and if I were to have attempted this in a different language it would be functionally complete but weak in the other areas.
 
   Project is deployed at https://vast-inlet-82463.herokuapp.com/
+  
+
 
 
 ### Running this application
@@ -14,6 +16,10 @@
 - Create database: `rails db:{create,migrate,seed}`
 - Run local server: `rails s`
 - Tests can be run with: `bundle exec rspec`
+
+### Database schema
+
+![Imgur](https://i.imgur.com/kKL8nSD.png)
 
 ### Endpoints
 
