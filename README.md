@@ -158,3 +158,32 @@
   ]
 }
   ```
+
+#### GET api/v1/team_medals
+
+This endpoint returns all teams with the count of how many medals olympians.
+
+The caveat to this endpoint is that for team sports, every member of the team contributes to the medal count.
+
+Sample response:
+```
+{
+  "team_medals": {
+    "United States": 76,
+    "Great Britain": 40,
+    "Italy": 29,
+    "Australia": 29,
+    "Russia": 28,
+    "Germany": 24,
+    "France": 23,
+    "China": 19,
+    "Canada": 18,
+    "Spain": 14,
+    "Serbia": 13,
+    "New Zealand": 12,
+    "Netherlands": 10,
+    "Jamaica": 10,
+    ...
+  }
+}
+```

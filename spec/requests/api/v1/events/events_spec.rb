@@ -21,6 +21,6 @@ describe 'Olympians endpoint' do
   it 'returns all events as an array of sports' do
     get '/api/v1/events'
     data = JSON.parse(response.body)
-    expect(data["events"][0]["sport"]).to eq("Swimming")
+    expect(data["events"][0]["sport"]).to eq("Diving")
   end
 end

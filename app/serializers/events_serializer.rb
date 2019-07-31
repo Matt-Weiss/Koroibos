@@ -1,7 +1,7 @@
 class EventsSerializer
 
   def self.all_events
-    sports = Event.distinct.pluck(:sport)
+    sports = Event.distinct.pluck(:sport).sort
     sorted_events = sports.map do |sport|
       {sport: sport,
       events: Event.where(sport: sport).pluck(:event)}
