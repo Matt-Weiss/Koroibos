@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :medalists, only: [:index]
       end
       resources :team_medals, only: [:index]
+      resources :events_participants, only: [:index]
     end
   end
 end

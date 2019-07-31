@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Medalists endpoint' do
+describe 'Events participants endpoint' do
   before :each do
     olympian_1 = Olympian.create(name: "Maha Abdalsalam Gouda",
                                   sex: "F",
@@ -40,20 +40,14 @@ describe 'Medalists endpoint' do
   end
 
   it 'can hit endpoint successfully' do
-    get "/api/v1/events/#{@event_1.id}/medalists"
+    get "/api/v1/events_participants"
     expect(response.status).to eq(200)
   end
 
   it 'returns all medalists as an array with specific data' do
-    get "/api/v1/events/#{@event_1.id}/medalists"
+    get "/api/v1/events_participants"
     data = JSON.parse(response.body)
-    expect(data["event"]).to eq("Diving Women's Platform")
-    expect(data["medalists"][0]["name"]).to eq("Maha Abdalsalam Gouda")
-  end
-
-  it 'does not return non medalists' do
-    get "/api/v1/events/#{@event_2.id}/medalists"
-    data = JSON.parse(response.body)
-    expect(data["medalists"].length).to eq(1)
+    expect(data[0]["event"]).to eq("Diving Women's Platform")
+    expect(data[0]["olympians"][0]["name"]).to eq("Maha Abdalsalam Gouda")
   end
 end

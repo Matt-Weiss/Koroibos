@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Olympians endpoint' do
+describe 'Events endpoint' do
   before :each do
     event_1 = Event.create(games: "2016 Summer",
                            sport: "Diving",

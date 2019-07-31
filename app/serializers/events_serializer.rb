@@ -21,4 +21,12 @@ class EventsSerializer
     {event: event.event,
     medalists: parsed_medalists}
   end
+
+  def self.all_participants
+    events = Event.includes(:olympians)
+    events.map do |event|
+      {event: event.event,
+       olympians: event.olympians}
+    end
+  end
 end
