@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Olympians endpoint' do
+describe 'Medalists endpoint' do
   before :each do
     olympian_1 = Olympian.create(name: "Maha Abdalsalam Gouda",
                                   sex: "F",
