@@ -2,9 +2,8 @@ class OlympianSerializer
 
   def self.parse_olympians(params = nil)
     if params["age"]
-      if params["age"] == 'youngest'
-        order = :asc
-      elsif params["age"] == 'oldest'
+      order = :asc
+      if params["age"] == 'oldest'
         order = :desc
       end
       olympians = Olympian.includes(:events, :olympian_events).order(age: order).limit(1)
