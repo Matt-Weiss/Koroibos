@@ -5,7 +5,7 @@
   Because this project is a representation of everything we've learned so far, I've opted to complete it in Rails. I feel that documentation and process are important and if I were to have attempted this in a different language it would be functionally complete but weak in the other areas.
 
   Project is deployed at https://vast-inlet-82463.herokuapp.com/
-  
+
 
 
 
@@ -186,4 +186,59 @@ Sample response:
     ...
   }
 }
+```
+
+#### GET api/v1/events_participants
+
+This endpoint returns all events with an array of all participants in each event.
+
+Sample response:
+```
+[
+  {
+    "event": "Weightlifting Women's Super-Heavyweight",
+    "olympians": [
+      {
+        "id": 2823,
+        "name": "Yaniuska Isabel Espinosa",
+        "sex": "F",
+        "age": 29,
+        "height": 172,
+        "weight": 114,
+        "team": "Venezuela",
+        "created_at": "2019-07-29T18:07:10.619Z",
+        "updated_at": "2019-07-29T18:07:10.619Z"
+      },
+      {
+        "id": 2380,
+        "name": "Yosra Dhieb",
+        "sex": "F",
+        "age": 20,
+        "height": 178,
+        "weight": 123,
+        "team": "Tunisia",
+        "created_at": "2019-07-29T18:07:06.792Z",
+        "updated_at": "2019-07-29T18:07:06.792Z"
+      },
+      {...}
+    ]
+  },
+  {
+    "event": "Gymnastics Men's Individual All-Around",
+    "olympians": [
+      {
+        "id": 2669,
+        "name": "Ludovico Edalli",
+        "sex": "M",
+        "age": 22,
+        "height": 165,
+        "weight": 57,
+        "team": "Italy",
+        "created_at": "2019-07-29T18:07:09.349Z",
+        "updated_at": "2019-07-29T18:07:09.349Z"
+      },
+      {...}
+    ]
+  }
+]
 ```
